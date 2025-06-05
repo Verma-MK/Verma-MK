@@ -46,16 +46,6 @@ Use standard algebraic notation:
 Or use UCI notation (from-to squares):
 - `e2e4`, `g1f3`, `e1g1` (castling)
 
-## 🤖 AI Opponent
-
-The AI uses advanced strategy with Stockfish engine fallback. It prioritizes:
-- **Checkmate threats** - Always looking for winning combinations
-- **Tactical captures** - High-value piece exchanges
-- **Positional play** - Center control and piece development
-- **Strategic depth** - Multi-move planning
-
-The AI is configured to provide challenging gameplay and will adapt its strategy based on the game phase!
-
 
 ## 🏆 Leaderboard
 
@@ -79,14 +69,6 @@ The AI is configured to provide challenging gameplay and will adapt its strategy
 - **Total Moves**: 34
 
 
-## 📊 Game Information
-
-- **Current FEN**: `rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2`
-- **Game Type**: Human vs Advanced AI
-- **Time Control**: Correspondence (no time limit)
-- **Engine**: Stockfish + Strategic Analysis
-- **Difficulty**: Competitive (Designed to win)
-
 ## 🔄 Starting a New Game
 
 If you'd like to start a new game, open an issue with the title: `Move: reset`
@@ -107,7 +89,5 @@ Earn achievements by playing:
 - [Chess Rules](https://www.chess.com/learn-how-to-play-chess)
 
 ---
-
-*This chess game is powered by GitHub Actions, python-chess, Stockfish engine, and advanced move analysis.*
 
 **🎯 Challenge the AI and make your move!** [Open New Issue →](../../issues/new)
