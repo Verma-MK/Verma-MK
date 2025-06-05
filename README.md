@@ -1,3 +1,6 @@
+![Banner](./banner.png)
+
+
 # ♟️ Interactive Chess Game
 
 Welcome to my GitHub profile chess game! Challenge a competitive AI opponent by opening a GitHub Issue.
