@@ -12,7 +12,10 @@ Welcome to my GitHub profile chess game! Challenge a competitive AI opponent by 
 
 ## 📋 Current Board
 
-![Chess Board](board.svg)
+<p align="center">
+  <img src="board.svg" alt="Chess Board" />
+</p>
+
 
 ## 🎮 How to Play
 
