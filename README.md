@@ -24,13 +24,7 @@ Welcome to my GitHub profile chess game! Challenge a competitive AI opponent by 
    - `Move: O-O` (kingside castling)
    - `Move: Qxd7+` (queen captures with check)
 
-2. **Wait for Processing**: The GitHub Action will automatically:
-   - Validate your move
-   - Update the board
-   - Generate a strategic AI response
-   - Track your statistics and achievements
-   - Comment on your issue with the result
-   - Close the issue
+2. **Wait for Processing**
 
 3. **Check the Board**: Return to this README to see the updated position!
 
@@ -81,12 +75,6 @@ Earn achievements by playing:
 - **👑 Winner** - Achieve 5+ victories
 - **💎 Brilliant Tactician** - Make 5+ brilliant moves
 - **⭐ High Performer** - Maintain 70%+ win rate
-
-## 📚 Chess Resources
-
-- [Chess.com Learn](https://www.chess.com/learn)
-- [Lichess Practice](https://lichess.org/practice)
-- [Chess Rules](https://www.chess.com/learn-how-to-play-chess)
 
 ---
 
