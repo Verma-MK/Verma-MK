@@ -14,7 +14,7 @@
       "total_score": 4
     },
     "AI": {
-      "moves_played": 14,
+      "moves_played": 15,
       "games_participated": 0,
       "wins": 0,
       "losses": 0,
@@ -22,9 +22,9 @@
       "brilliant_moves": 0,
       "blunders": 0,
       "first_game": "2025-06-05T07:48:55.708191",
-      "last_active": "2025-06-05T07:58:13.240726",
+      "last_active": "2025-06-05T09:08:16.983469",
       "favorite_openings": {},
-      "total_score": 14
+      "total_score": 15
     },
     "TestPlayer2": {
       "moves_played": 4,
@@ -51,6 +51,19 @@
       "last_active": "2025-06-05T07:58:13.213422",
       "favorite_openings": {},
       "total_score": 10
+    },
+    "Verma-MK": {
+      "moves_played": 1,
+      "games_participated": 0,
+      "wins": 0,
+      "losses": 0,
+      "draws": 0,
+      "brilliant_moves": 0,
+      "blunders": 0,
+      "first_game": "2025-06-05T09:08:16.842728",
+      "last_active": "2025-06-05T09:08:16.842737",
+      "favorite_openings": {},
+      "total_score": 1
     }
   },
   "games": [
@@ -73,10 +86,10 @@
       "total_moves": 22
     }
   ],
-  "total_moves": 32,
+  "total_moves": 34,
   "total_games": 2,
   "ai_wins": 2,
   "player_wins": 0,
   "draws": 0,
-  "last_updated": "2025-06-05T07:58:13.240737"
+  "last_updated": "2025-06-05T09:08:16.983482"
 }

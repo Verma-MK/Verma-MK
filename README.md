@@ -57,6 +57,27 @@ The AI uses advanced strategy with Stockfish engine fallback. It prioritizes:
 The AI is configured to provide challenging gameplay and will adapt its strategy based on the game phase!
 
 
+## 🏆 Leaderboard
+
+| Rank | Player | Score | W/L/D | Win Rate | Moves |
+|------|--------|-------|-------|----------|-------|
+| 1 | AI | 15 | 0/0/0 | 0% | 15 |
+| 2 | Player1 | 10 | 0/0/0 | 0% | 10 |
+| 3 | TestPlayer1 | 4 | 0/2/0 | 0% | 4 |
+| 4 | TestPlayer2 | 4 | 0/2/0 | 0% | 4 |
+| 5 | Verma-MK | 1 | 0/0/0 | 0% | 1 |
+
+## 🎖️ Recent Achievements
+
+
+## 📈 Game Statistics
+
+- **Total Games Played**: 2
+- **AI Win Rate**: 100.0% (2 wins)
+- **Player Victories**: 0
+- **Draws**: 0
+- **Total Moves**: 34
+
 
 ## 📊 Game Information
 
