@@ -1,0 +1,82 @@
+{
+  "players": {
+    "TestPlayer1": {
+      "moves_played": 4,
+      "games_participated": 0,
+      "wins": 0,
+      "losses": 2,
+      "draws": 0,
+      "brilliant_moves": 0,
+      "blunders": 0,
+      "first_game": "2025-06-05T07:48:55.698817",
+      "last_active": "2025-06-05T07:58:12.722898",
+      "favorite_openings": {},
+      "total_score": 4
+    },
+    "AI": {
+      "moves_played": 14,
+      "games_participated": 0,
+      "wins": 0,
+      "losses": 0,
+      "draws": 0,
+      "brilliant_moves": 0,
+      "blunders": 0,
+      "first_game": "2025-06-05T07:48:55.708191",
+      "last_active": "2025-06-05T07:58:13.240726",
+      "favorite_openings": {},
+      "total_score": 14
+    },
+    "TestPlayer2": {
+      "moves_played": 4,
+      "games_participated": 0,
+      "wins": 0,
+      "losses": 2,
+      "draws": 0,
+      "brilliant_moves": 0,
+      "blunders": 0,
+      "first_game": "2025-06-05T07:48:55.708840",
+      "last_active": "2025-06-05T07:58:12.745413",
+      "favorite_openings": {},
+      "total_score": 4
+    },
+    "Player1": {
+      "moves_played": 10,
+      "games_participated": 0,
+      "wins": 0,
+      "losses": 0,
+      "draws": 0,
+      "brilliant_moves": 0,
+      "blunders": 0,
+      "first_game": "2025-06-05T07:57:15.960094",
+      "last_active": "2025-06-05T07:58:13.213422",
+      "favorite_openings": {},
+      "total_score": 10
+    }
+  },
+  "games": [
+    {
+      "date": "2025-06-05T07:48:55.717219",
+      "players": [
+        "TestPlayer1",
+        "TestPlayer2"
+      ],
+      "winner": "AI",
+      "total_moves": 6
+    },
+    {
+      "date": "2025-06-05T07:58:12.745910",
+      "players": [
+        "TestPlayer1",
+        "TestPlayer2"
+      ],
+      "winner": "AI",
+      "total_moves": 22
+    }
+  ],
+  "total_moves": 32,
+  "total_games": 2,
+  "ai_wins": 2,
+  "player_wins": 0,
+  "draws": 0,
+  "last_updated": "2025-06-05T07:58:13.240737"
+}
