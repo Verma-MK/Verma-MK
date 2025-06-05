@@ -1,19 +1,13 @@
-#!/usr/bin/env python3
-"""
-Utility functions for chess game management
-"""
-
 import os
 from datetime import datetime
 import chess
 
 def log_move(move_info):
-    """Log move to console and optionally to file"""
+    
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     log_entry = f"[{timestamp}] {move_info}"
     print(log_entry)
     
-    # Optionally write to log file
     try:
         with open('moves.log', 'a') as f:
             f.write(log_entry + '\n')
@@ -21,9 +15,9 @@ def log_move(move_info):
         print(f"Error writing to log file: {e}")
 
 def update_readme(engine, stats=None):
-    """Update README.md with current game state and statistics"""
+    
     try:
-        # Read current README template or create new one
+        
         readme_template = get_readme_template(engine, stats)
         
         with open('README.md', 'w') as f:
@@ -34,26 +28,25 @@ def update_readme(engine, stats=None):
         print(f"Error updating README: {e}")
 
 def get_readme_template(engine, stats=None):
-    """Generate README content with current game state and statistics"""
+    
     game_status = engine.get_game_status()
     move_count = engine.get_move_count()
     last_moves = engine.get_last_moves(3)
     current_fen = engine.get_fen()
     
-    # Determine whose turn it is and game state
+    
     turn_indicator = "⚪ **White to move**" if engine.board.turn else "⚫ **Black to move (AI)**"
     
     if engine.board.is_game_over():
         turn_indicator = "🏁 **Game Over**"
     
-    # Generate leaderboard section if stats available
     leaderboard_section = ""
     achievements_section = ""
     game_stats_section = ""
     
     if stats:
         try:
-            # Get leaderboard
+           
             leaderboard = stats.get_leaderboard(5)
             if leaderboard:
                 leaderboard_section = "\n## 🏆 Leaderboard\n\n"
@@ -64,7 +57,7 @@ def get_readme_template(engine, stats=None):
                     win_rate = f"{player['win_rate']:.1%}" if player['games'] > 0 else "0%"
                     leaderboard_section += f"| {i} | {player['username']} | {player['score']} | {player['wins']}/{player['losses']}/{player['draws']} | {win_rate} | {player['moves']} |\n"
             
-            # Get recent achievements
+            
             recent_players = list(stats.stats['players'].keys())[-3:] if stats.stats['players'] else []
             if recent_players:
                 achievements_section = "\n## 🎖️ Recent Achievements\n\n"
@@ -73,7 +66,7 @@ def get_readme_template(engine, stats=None):
                     if achievements:
                         achievements_section += f"**{player}**: {', '.join(achievements[:2])}\n\n"
             
-            # Game statistics
+            
             total_games = stats.stats.get('total_games', 0)
             ai_wins = stats.stats.get('ai_wins', 0)
             player_wins = stats.stats.get('player_wins', 0)
@@ -191,9 +184,8 @@ def append_move_to_pgn(move_san, player="Human"):
     try:
         pgn_file = 'game_history.pgn'
         
-        # Check if file exists and has content
         if not os.path.exists(pgn_file) or os.path.getsize(pgn_file) == 0:
-            # Initialize PGN file with headers
+            
             with open(pgn_file, 'w') as f:
                 f.write('[Event "GitHub Chess Game"]\n')
                 f.write('[Site "GitHub Repository"]\n')
@@ -202,8 +194,7 @@ def append_move_to_pgn(move_san, player="Human"):
                 f.write('[White "Human Players"]\n')
                 f.write('[Black "Stockfish AI"]\n')
                 f.write('[Result "*"]\n\n')
-                
-        # Append move
+               
         with open(pgn_file, 'a') as f:
             f.write(f"{move_san} ")
             
@@ -226,7 +217,6 @@ def get_game_statistics():
                     board = chess.Board(fen)
                     stats['total_moves'] = len(board.move_stack)
         
-        # Count games from PGN file
         if os.path.exists('game_history.pgn'):
             with open('game_history.pgn', 'r') as f:
                 content = f.read()
@@ -241,14 +231,13 @@ def validate_move_format(move_str):
     """Validate move string format"""
     import re
     
-    # Common chess move patterns
     patterns = [
-        r'^[a-h][1-8][a-h][1-8][qrnb]?$',  # UCI notation (e2e4, a7a8q)
-        r'^[KQRNB][a-h1-8]*[a-h][1-8]$',   # Piece moves (Nf3, Bb5)
-        r'^[a-h][1-8]$',                    # Pawn moves (e4, d5)  
-        r'^[a-h]x[a-h][1-8]$',             # Pawn captures (exd5)
-        r'^O-O(-O)?$',                      # Castling
-        r'^[a-h][18]=[QRNB]$',             # Promotion (e8=Q)
+        r'^[a-h][1-8][a-h][1-8][qrnb]?$',  
+        r'^[KQRNB][a-h1-8]*[a-h][1-8]$',  
+        r'^[a-h][1-8]$',                
+        r'^[a-h]x[a-h][1-8]$',          
+        r'^O-O(-O)?$',                   
+        r'^[a-h][18]=[QRNB]$',          
     ]
     
     move_str = move_str.strip()
