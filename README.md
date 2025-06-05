@@ -67,15 +67,6 @@ Or use UCI notation (from-to squares):
 
 If you'd like to start a new game, open an issue with the title: `Move: reset`
 
-## 🏅 Achievement System
-
-Earn achievements by playing:
-- **🏃 Century Player** - Play 100+ moves
-- **🎯 Regular Player** - Participate in 10+ games  
-- **👑 Winner** - Achieve 5+ victories
-- **💎 Brilliant Tactician** - Make 5+ brilliant moves
-- **⭐ High Performer** - Maintain 70%+ win rate
-
 ---
 
 **🎯 Challenge the AI and make your move!** [Open New Issue →](../../issues/new)
