@@ -1,4 +1,4 @@
-![Banner](./banner.png)
+![Banner](./banner.svg)
 
 
 # ♟️ Interactive Chess Game
