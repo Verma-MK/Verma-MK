@@ -1,9 +1,10 @@
 ![Banner](./Banner.svg)
 
 
-# ♟️ Interactive Chess Game
+#  ⚔️ One Board. One Bot. Infinite Regret. ⚔️
 
-Welcome to my GitHub profile chess game! Challenge a competitive AI opponent by opening a GitHub Issue.
+**Test your strategy. Face my undefeated AI by opening a GitHub Issue.**
+
 
 ## 🏁 Current Game Status
 
@@ -67,11 +68,6 @@ Or use UCI notation (from-to squares):
 - **Player Victories**: 0
 - **Draws**: 0
 - **Total Moves**: 34
-
-
-## 🔄 Starting a New Game
-
-If you'd like to start a new game, open an issue with the title: `Move: reset`
 
 ---
 
