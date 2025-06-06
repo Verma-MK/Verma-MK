@@ -1,7 +1,7 @@
 ![Banner](./Banner.svg)
 
 
-#  ⚔️ One Board. One Bot. Infinite Regret. ⚔️
+#  ⚔️ One Board. One Bot. Victory or Oblion — Choose Your Fate. ⚔️
 
 **Test your strategy. Face my undefeated AI by opening a GitHub Issue.**
 
@@ -14,7 +14,7 @@
 **Total Moves:** 2  
 **Last Moves:** 1. e4 e5
 
-## 📋 Current Board
+## ░ Current Board
 
 <p align="center">
   <img src="board.svg" alt="Chess Board" />
