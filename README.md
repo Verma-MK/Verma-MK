@@ -69,4 +69,4 @@ Or use UCI notation (from-to squares):
 
 ---
 
-**🎯 Your Move, Challenger. The AI Awaits** [Open New Issue →](../../issues/new)
+**🎯 Your Move, Challenger. The AI Awaits —** [Open New Issue →](../../issues/new)
