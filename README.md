@@ -58,8 +58,6 @@ Or use UCI notation (from-to squares):
 | 4 | TestPlayer2 | 4 | 0/2/0 | 0% | 4 |
 | 5 | Verma-MK | 1 | 0/0/0 | 0% | 1 |
 
-## 🎖️ Recent Achievements
-
 
 ## 📈 Game Statistics
 
@@ -71,4 +69,4 @@ Or use UCI notation (from-to squares):
 
 ---
 
-**🎯 Challenge the AI and make your move!** [Open New Issue →](../../issues/new)
+**🎯 Your Move, Challenger. The AI Awaits** [Open New Issue →](../../issues/new)
