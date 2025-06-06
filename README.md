@@ -1,7 +1,7 @@
 ![Banner](./Banner.svg)
 
 
-#  ⚔️ One Board. One Bot. Victory or Oblion — Choose Your Fate. ⚔️
+# ⚔️ One Board. One Bot. Victory or Oblion — Choose Your Fate ⚔️
 
 **Test your strategy. Face my undefeated AI by opening a GitHub Issue.**
 
