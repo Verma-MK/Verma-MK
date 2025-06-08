@@ -47,6 +47,13 @@ Or use UCI notation (from-to squares):
 - `e2e4`, `g1f3`, `e1g1` (castling)
 
 
+
+<table>
+  <tr>
+    <td>
+
+
+
 ## 🏆 Leaderboard
 
 | Rank | Player | Score | W/L/D | Win Rate | Moves |
@@ -59,11 +66,15 @@ Or use UCI notation (from-to squares):
 
 
 
+</td>
 <td style="vertical-align: top; padding-left: 20px;">
 
+<!-- Right-aligned image -->
 <img src="./tentocats.svg" alt="Leaderboard Art" width="200"/>
 
 </td>
+  </tr>
+</table>
 
 ## 📈 Game Statistics
 
