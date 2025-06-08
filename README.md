@@ -51,8 +51,8 @@ Or use UCI notation (from-to squares):
 
 
 <table style="border: none;">
-  <tr>
-    <td>
+  <tr style="border: none;">
+    <td style="border: none;">
 
 
 
