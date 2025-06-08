@@ -14,7 +14,7 @@
       "total_score": 4
     },
     "AI": {
-      "moves_played": 15,
+      "moves_played": 16,
       "games_participated": 0,
       "wins": 0,
       "losses": 0,
@@ -22,9 +22,9 @@
       "brilliant_moves": 0,
       "blunders": 0,
       "first_game": "2025-06-05T07:48:55.708191",
-      "last_active": "2025-06-05T09:08:16.983469",
+      "last_active": "2025-06-08T16:29:47.901125",
       "favorite_openings": {},
-      "total_score": 15
+      "total_score": 16
     },
     "TestPlayer2": {
       "moves_played": 4,
@@ -64,6 +64,19 @@
       "last_active": "2025-06-05T09:08:16.842737",
       "favorite_openings": {},
       "total_score": 1
+    },
+    "JaskeeratSingh9": {
+      "moves_played": 1,
+      "games_participated": 0,
+      "wins": 0,
+      "losses": 0,
+      "draws": 0,
+      "brilliant_moves": 0,
+      "blunders": 0,
+      "first_game": "2025-06-08T16:29:47.753536",
+      "last_active": "2025-06-08T16:29:47.753544",
+      "favorite_openings": {},
+      "total_score": 1
     }
   },
   "games": [
@@ -86,10 +99,10 @@
       "total_moves": 22
     }
   ],
-  "total_moves": 34,
+  "total_moves": 36,
   "total_games": 2,
   "ai_wins": 2,
   "player_wins": 0,
   "draws": 0,
-  "last_updated": "2025-06-05T09:08:16.983482"
+  "last_updated": "2025-06-08T16:29:47.901138"
 }
