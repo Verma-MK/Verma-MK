@@ -50,9 +50,9 @@ Or use UCI notation (from-to squares):
 ## 🏆 Leaderboard
 
 
-<table style="border: none;">
-  <tr style="border: none;">
-    <td style="border: none;">
+<table>
+  <tr>
+    <td>
 
 
 
