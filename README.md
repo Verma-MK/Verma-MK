@@ -57,7 +57,7 @@ Or use UCI notation (from-to squares):
 | 4 | TestPlayer2 | 4 | 0/2/0 | 0% | 4 |
 | 5 | Verma-MK | 1 | 0/0/0 | 0% | 1 |
 
-<img src="./tentocats.svg" alt="tentocats" style="float:right; width:150px; margin-left: 10px;" />
+<img src="./tentocats.svg" alt="tentocats" style="margin-right:0px" />
 
 ## 📈 Game Statistics
 
