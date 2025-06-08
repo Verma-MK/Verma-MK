@@ -66,6 +66,13 @@ Or use UCI notation (from-to squares):
 - **Draws**: 0
 - **Total Moves**: 34
 
----
+--
 
 **🎯 Your Move, Challenger. The AI Awaits —** [Open New Issue →](../../issues/new)
+
+---
+
+<p align="center">
+  <img src="./SkatetoCat.png" width="45%" alt="SkatetoCat">
+  <img src="./DinoCat.svg" width="45%" alt="DinoCat">
+</p>
