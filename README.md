@@ -47,13 +47,7 @@ Or use UCI notation (from-to squares):
 - `e2e4`, `g1f3`, `e1g1` (castling)
 
 
-## 🏆 Leaderboard
-
-
-<p align="right">
-  <img src="./tentocats.svg" alt="Leaderboard Art" width="150">
-</p>
-
+## 🏆<img src="./tentocats.svg" alt="Leaderboard Art" width="90"> Leaderboard
 
 | Rank | Player | Score | W/L/D | Win Rate | Moves |
 |------|--------|-------|-------|----------|-------|
