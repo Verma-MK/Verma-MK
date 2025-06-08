@@ -47,7 +47,14 @@ Or use UCI notation (from-to squares):
 - `e2e4`, `g1f3`, `e1g1` (castling)
 
 
-## 🏆<img src="./tentocats.svg" alt="Leaderboard Art" width="90"> Leaderboard
+## Leaderboard
+
+
+<table>
+  <tr>
+    <td>
+
+
 
 | Rank | Player | Score | W/L/D | Win Rate | Moves |
 |------|--------|-------|-------|----------|-------|
@@ -56,6 +63,18 @@ Or use UCI notation (from-to squares):
 | 3 | TestPlayer1 | 4 | 0/2/0 | 0% | 4 |
 | 4 | TestPlayer2 | 4 | 0/2/0 | 0% | 4 |
 | 5 | Verma-MK | 1 | 0/0/0 | 0% | 1 |
+
+
+
+</td>
+<td style="vertical-align: top; padding-left: auto;">
+
+<img src="./tentocats.svg" alt="Leaderboard Art" width="auto"/>
+
+</td>
+  </tr>
+</table>
+
 
 
 ## 📈 Game Statistics
