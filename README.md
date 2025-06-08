@@ -47,10 +47,10 @@ Or use UCI notation (from-to squares):
 - `e2e4`, `g1f3`, `e1g1` (castling)
 
 
-## Leaderboard
+## 🏆 Leaderboard
 
 
-<table>
+<table style="border: none;">
   <tr>
     <td>
 
