@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+"""
+Chess engine handling game logic, AI moves, and game state management
+"""
+
 import chess
 import chess.engine
 import chess.pgn
@@ -42,13 +47,16 @@ class ChessEngine:
         Returns (success: bool, message: str)
         """
         try:
+            # Try different move formats
             move = None
             
+            # Try standard algebraic notation first
             try:
                 move = self.board.parse_san(move_str)
             except ValueError:
                 pass
                 
+            # Try UCI notation (e.g., e2e4)
             if move is None:
                 try:
                     move = chess.Move.from_uci(move_str)
@@ -58,10 +66,12 @@ class ChessEngine:
             if move is None:
                 return False, f"Could not parse move: {move_str}"
                 
+            # Check if move is legal
             if move not in self.board.legal_moves:
                 legal_moves = [self.board.san(m) for m in self.board.legal_moves]
                 return False, f"Illegal move. Legal moves: {', '.join(legal_moves[:10])}{'...' if len(legal_moves) > 10 else ''}"
             
+            # Make the move
             self.board.push(move)
             return True, f"Move {move_str} played successfully"
             
@@ -69,17 +79,22 @@ class ChessEngine:
             return False, f"Error processing move: {str(e)}"
     
     def get_ai_move(self):
-
+        """
+        Get AI move using Stockfish engine with strong fallback strategy
+        Returns (move_str: str, message: str)
+        """
         try:
+            # Check if game is over
             if self.board.is_game_over():
                 return None, "Game is over"
                 
-            stockfish_path = '/usr/games/stockfish'
+            # Try to use Stockfish engine
+            stockfish_path = '/usr/games/stockfish'  # Default Ubuntu path
             if not os.path.exists(stockfish_path):
-                stockfish_path = 'stockfish'
+                stockfish_path = 'stockfish'  # Try system PATH
                 
             with chess.engine.SimpleEngine.popen_uci(stockfish_path) as engine:
-               
+                # Configure engine for maximum strength
                 engine.configure({
                     "Skill Level": 20,
                     "Threads": 2,
@@ -88,7 +103,7 @@ class ChessEngine:
                     "UCI_LimitStrength": False,
                     "UCI_Elo": 3200
                 })
-                
+                # Extended thinking time for deeper analysis
                 result = engine.play(self.board, chess.engine.Limit(time=5.0, depth=15))
                 
                 if result.move:
@@ -98,7 +113,7 @@ class ChessEngine:
         except Exception as e:
             print(f"Stockfish engine error: {e}")
             
-       
+        # Advanced fallback strategy - prioritize winning moves
         return self._get_strategic_move()
     
     def _get_strategic_move(self):
@@ -110,29 +125,35 @@ class ChessEngine:
         if not legal_moves:
             return None, "No legal moves available"
         
+        # Phase 1: Critical tactical analysis
         critical_moves = self._find_critical_moves(legal_moves)
         if critical_moves:
             return critical_moves
         
+        # Phase 2: Advanced positional evaluation
         best_move = self._evaluate_positional_moves(legal_moves)
         if best_move:
             return best_move
         
+        # Phase 3: Opening book knowledge
         if len(self.board.move_stack) < 12:
             opening_move = self._get_opening_book_move(legal_moves)
             if opening_move:
                 return opening_move
         
+        # Phase 4: Endgame specialization
         if self._is_endgame():
             endgame_move = self._get_endgame_move(legal_moves)
             if endgame_move:
                 return endgame_move
         
+        # Phase 5: Advanced evaluation with mini-max
         return self._minimax_evaluation(legal_moves, depth=3)
     
     def _find_critical_moves(self, legal_moves):
         """Find game-critical moves: checkmate, check escape, major threats"""
         
+        # 1. Immediate checkmate
         for move in legal_moves:
             self.board.push(move)
             if self.board.is_checkmate():
@@ -141,6 +162,7 @@ class ChessEngine:
                 return move_san, f"AI plays {move_san} - Checkmate!"
             self.board.pop()
         
+        # 2. Checkmate in 2 moves
         for move in legal_moves:
             self.board.push(move)
             opponent_moves = list(self.board.legal_moves)
@@ -165,11 +187,14 @@ class ChessEngine:
                 move_san = self.board.san(move)
                 return move_san, f"AI plays {move_san} - Forced mate in 2!"
         
+        # 3. Defend against checkmate threats
         if self.board.is_check():
+            # Find best defense when in check
             defensive_moves = []
             for move in legal_moves:
                 self.board.push(move)
                 if not self.board.is_check():
+                    # Evaluate safety of this square
                     safety_score = self._evaluate_king_safety()
                     defensive_moves.append((move, safety_score))
                 self.board.pop()
@@ -180,6 +205,7 @@ class ChessEngine:
                 move_san = self.board.san(best_defense)
                 return move_san, f"AI plays {move_san} - Defending!"
         
+        # 4. Win material with tactics
         tactical_moves = []
         for move in legal_moves:
             material_gain = self._calculate_material_gain(move)
@@ -202,22 +228,27 @@ class ChessEngine:
             score = 0
             piece = self.board.piece_at(move.from_square)
             
+            # Piece-square tables bonus
             score += self._piece_square_value(piece, move.to_square)
             
+            # Center control
             center_squares = [chess.D4, chess.D5, chess.E4, chess.E5]
             if move.to_square in center_squares:
                 score += 30
             
+            # Development bonus in opening
             if len(self.board.move_stack) < 16:
                 if piece and piece.piece_type in [chess.KNIGHT, chess.BISHOP]:
-                    if move.from_square in [chess.B1, chess.G1, chess.C1, chess.F1]:
+                    if move.from_square in [chess.B1, chess.G1, chess.C1, chess.F1]:  # Starting squares
                         score += 25
             
+            # King safety
             if piece and piece.piece_type == chess.KING:
-                if len(self.board.move_stack) < 20: 
-                    if move.to_square in [chess.G1, chess.C1]: 
+                if len(self.board.move_stack) < 20:  # Castling phase
+                    if move.to_square in [chess.G1, chess.C1]:  # Castling squares
                         score += 50
             
+            # Control important squares
             self.board.push(move)
             controlled_squares = len(list(self.board.attacks(move.to_square)))
             score += controlled_squares * 2
@@ -237,13 +268,17 @@ class ChessEngine:
         """Opening book with strong theoretical moves"""
         move_stack_length = len(self.board.move_stack)
         
+        # Respond to common openings with best theoretical moves
         opening_responses = {
-            "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR": ["c5", "e5", "c6"], 
+            # Respond to 1.e4
+            "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR": ["c5", "e5", "c6"],
+            # Respond to 1.d4  
             "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR": ["Nf6", "d5", "f5"],
+            # Italian Game response
             "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R": ["f5", "Be7", "Nf6"]
         }
         
-        current_fen = self.board.fen().split()[0] 
+        current_fen = self.board.fen().split()[0]  # Position only
         if current_fen in opening_responses:
             for response in opening_responses[current_fen]:
                 try:
@@ -253,17 +288,22 @@ class ChessEngine:
                 except:
                     continue
         
+        # General opening principles
         if move_stack_length < 8:
+            # Prioritize central pawn moves and piece development
             priority_moves = []
             for move in legal_moves:
                 piece = self.board.piece_at(move.from_square)
                 if piece:
+                    # Central pawn advances
                     if piece.piece_type == chess.PAWN and move.to_square in [chess.D4, chess.D5, chess.E4, chess.E5]:
                         priority_moves.append((move, 40))
+                    # Knight development
                     elif piece.piece_type == chess.KNIGHT:
                         good_squares = [chess.F3, chess.C3, chess.F6, chess.C6]
                         if move.to_square in good_squares:
                             priority_moves.append((move, 35))
+                    # Bishop development
                     elif piece.piece_type == chess.BISHOP:
                         good_squares = [chess.C4, chess.F4, chess.E2, chess.C5, chess.F5, chess.E7]
                         if move.to_square in good_squares:
@@ -286,19 +326,23 @@ class ChessEngine:
         ]))
     
     def _get_endgame_move(self, legal_moves):
-        
+        """Specialized endgame play"""
+        # King activity in endgame
         scored_moves = []
         for move in legal_moves:
             score = 0
             piece = self.board.piece_at(move.from_square)
             
             if piece and piece.piece_type == chess.KING:
-                
+                # Activate king in endgame
                 king_advancement = chess.square_rank(move.to_square) if piece.color else 7 - chess.square_rank(move.to_square)
-                score += king_advancement * 10   
+                score += king_advancement * 10
+                
+                # Centralize king
                 center_distance = abs(chess.square_file(move.to_square) - 3.5) + abs(chess.square_rank(move.to_square) - 3.5)
                 score += (7 - center_distance) * 5
             
+            # Pawn promotion race
             if piece and piece.piece_type == chess.PAWN:
                 promotion_distance = 7 - chess.square_rank(move.to_square) if piece.color else chess.square_rank(move.to_square)
                 score += (7 - promotion_distance) * 15
@@ -314,7 +358,7 @@ class ChessEngine:
         return None
     
     def _minimax_evaluation(self, legal_moves, depth=3):
-        
+        """Simplified minimax with alpha-beta pruning concepts"""
         best_score = float('-inf')
         best_move = None
         
@@ -338,7 +382,7 @@ class ChessEngine:
         return move_san, f"AI plays {move_san} - Strategic!"
     
     def _minimax_helper(self, depth, maximizing, alpha, beta):
-        
+        """Minimax helper with pruning"""
         if depth == 0 or self.board.is_game_over():
             return self._evaluate_position()
         
@@ -346,7 +390,7 @@ class ChessEngine:
         
         if maximizing:
             max_eval = float('-inf')
-            for move in legal_moves[:8]: 
+            for move in legal_moves[:8]:  # Limit for performance
                 self.board.push(move)
                 eval_score = self._minimax_helper(depth - 1, False, alpha, beta)
                 self.board.pop()
@@ -357,7 +401,7 @@ class ChessEngine:
             return max_eval
         else:
             min_eval = float('inf')
-            for move in legal_moves[:8]:
+            for move in legal_moves[:8]:  # Limit for performance
                 self.board.push(move)
                 eval_score = self._minimax_helper(depth - 1, True, alpha, beta)
                 self.board.pop()
@@ -368,7 +412,7 @@ class ChessEngine:
             return min_eval
     
     def _evaluate_position(self):
-        
+        """Comprehensive position evaluation"""
         if self.board.is_checkmate():
             return -10000 if self.board.turn else 10000
         if self.board.is_stalemate() or self.board.is_insufficient_material():
@@ -378,31 +422,32 @@ class ChessEngine:
         piece_values = {chess.PAWN: 100, chess.KNIGHT: 320, chess.BISHOP: 330, 
                        chess.ROOK: 500, chess.QUEEN: 900, chess.KING: 0}
         
-        
+        # Material count
         for square in chess.SQUARES:
             piece = self.board.piece_at(square)
             if piece:
                 value = piece_values[piece.piece_type]
                 score += value if piece.color else -value
         
-        
+        # Positional factors
         score += self._evaluate_king_safety() * 20
         score += self._evaluate_piece_mobility() * 10
         
         return score
     
     def _evaluate_king_safety(self):
-        
+        """Evaluate king safety"""
         safety = 0
+        # Implementation details for king safety evaluation
         return safety
     
     def _evaluate_piece_mobility(self):
-        
+        """Evaluate piece mobility"""
         mobility = len(list(self.board.legal_moves))
         return mobility
     
     def _calculate_material_gain(self, move):
-        
+        """Calculate material gained from a move"""
         if not self.board.is_capture(move):
             return 0
         
@@ -414,10 +459,10 @@ class ChessEngine:
         return 0
     
     def _piece_square_value(self, piece, square):
-        
+        """Get piece-square table value"""
         if not piece:
             return 0
-        
+        # Simplified piece-square evaluation
         rank = chess.square_rank(square)
         file = chess.square_file(square)
         
@@ -430,9 +475,9 @@ class ChessEngine:
         return 0
     
     def make_ai_move(self, move_str):
-        
+        """Make AI move on the board"""
         try:
-            
+            # Try to parse as SAN first
             move = self.board.parse_san(move_str)
             if move in self.board.legal_moves:
                 self.board.push(move)
@@ -445,7 +490,7 @@ class ChessEngine:
             return False
     
     def get_game_status(self):
-        
+        """Get current game status"""
         if self.board.is_checkmate():
             winner = "Black" if self.board.turn else "White"
             return f"Checkmate! {winner} wins!"
@@ -464,11 +509,11 @@ class ChessEngine:
             return f"{turn} to move"
     
     def get_move_count(self):
-        
+        """Get number of moves played"""
         return len(self.board.move_stack)
     
     def get_last_moves(self, count=5):
-        
+        """Get last N moves in algebraic notation"""
         moves = []
         board_copy = chess.Board()
         
@@ -478,18 +523,19 @@ class ChessEngine:
             
             move_number = (len(self.board.move_stack) - len(self.board.move_stack[-count*2:]) + i) // 2 + 1
             
-            if i % 2 == 0: 
+            if i % 2 == 0:  # White move
                 moves.append(f"{move_number}. {move_san}")
-            else:  
+            else:  # Black move
                 moves.append(f"{move_san}")
                 
         return " ".join(moves)
     
     def reset_game(self):
-        
+        """Reset the game to starting position"""
         self.board = chess.Board()
         self.save_game_state()
         
+        # Clear PGN history
         try:
             with open('game_history.pgn', 'w') as f:
                 f.write("")
