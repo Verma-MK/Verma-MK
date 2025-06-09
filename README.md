@@ -1,4 +1,4 @@
-# ♟️ Interactive Chess Game
+<h1 align="center">⚔️ One Board. One Bot. Victory or Oblivion — Choose Your Fate ⚔️</h1>
 
 Welcome to my GitHub profile chess game! Challenge a competitive AI opponent by opening a GitHub Issue.
 
