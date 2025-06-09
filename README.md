@@ -1,6 +1,9 @@
+ ![Banner](./Banner.svg)
+    
+    
 <h1 align="center">⚔️ One Board. One Bot. Victory or Oblivion — Choose Your Fate ⚔️</h1>
 
-Welcome to my GitHub profile chess game! Challenge a competitive AI opponent by opening a GitHub Issue.
+**Test your strategy. Face my undefeated AI by opening a GitHub Issue.**
 
 ## 🏁 Current Game Status
 
@@ -8,11 +11,13 @@ Welcome to my GitHub profile chess game! Challenge a competitive AI opponent by 
 
 **Game Status:** White to move  
 **Total Moves:** 2  
-**Last Moves:** 1. d3 d5
+**Last Moves:** 1. Be2 Qd3
 
-## 📋 Current Board
+## ░ Current Board
 
-![Chess Board](board.svg)
+<p align="center">
+  <img src="board.svg" alt="Chess Board" />
+</p>
 
 ## 🎮 How to Play
 
@@ -24,15 +29,9 @@ Welcome to my GitHub profile chess game! Challenge a competitive AI opponent by 
    - `Move: O-O` (kingside castling)
    - `Move: Qxd7+` (queen captures with check)
 
-2. **Wait for Processing**: The GitHub Action will automatically:
-   - Validate your move
-   - Update the board
-   - Generate a strategic AI response
-   - Track your statistics and achievements
-   - Comment on your issue with the result
-   - Close the issue
+2. **Wait for Processing**
 
-3. **Check the Board**: Return to this README to see the updated position!
+3. **Check the Board**
 
 ## 📝 Move Format Guide
 
@@ -46,26 +45,17 @@ Use standard algebraic notation:
 Or use UCI notation (from-to squares):
 - `e2e4`, `g1f3`, `e1g1` (castling)
 
-## 🤖 AI Opponent
-
-The AI uses advanced strategy with Stockfish engine fallback. It prioritizes:
-- **Checkmate threats** - Always looking for winning combinations
-- **Tactical captures** - High-value piece exchanges
-- **Positional play** - Center control and piece development
-- **Strategic depth** - Multi-move planning
-
-The AI is configured to provide challenging gameplay and will adapt its strategy based on the game phase!
 
 
 ## 🏆 Leaderboard
 
 | Rank | Player | Score | W/L/D | Win Rate | Moves |
 |------|--------|-------|-------|----------|-------|
-| 1 | AI | 16 | 0/0/0 | 0% | 16 |
+| 1 | AI | 18 | 0/0/0 | 0% | 18 |
 | 2 | Player1 | 10 | 0/0/0 | 0% | 10 |
 | 3 | TestPlayer1 | 4 | 0/2/0 | 0% | 4 |
 | 4 | TestPlayer2 | 4 | 0/2/0 | 0% | 4 |
-| 5 | Verma-MK | 1 | 0/0/0 | 0% | 1 |
+| 5 | Verma-MK | 3 | 0/0/0 | 0% | 3 |
 
 ## 🎖️ Recent Achievements
 
@@ -76,38 +66,22 @@ The AI is configured to provide challenging gameplay and will adapt its strategy
 - **AI Win Rate**: 100.0% (2 wins)
 - **Player Victories**: 0
 - **Draws**: 0
-- **Total Moves**: 36
+- **Total Moves**: 40
 
 
-## 📊 Game Information
-
-- **Current FEN**: `rnbqkbnr/ppp2ppp/8/3pp3/4P3/3P4/PPP2PPP/RNBQKBNR w KQkq - 0 3`
-- **Game Type**: Human vs Advanced AI
-- **Time Control**: Correspondence (no time limit)
-- **Engine**: Stockfish + Strategic Analysis
-- **Difficulty**: Competitive (Designed to win)
-
-## 🔄 Starting a New Game
-
-If you'd like to start a new game, open an issue with the title: `Move: reset`
-
-## 🏅 Achievement System
-
-Earn achievements by playing:
-- **🏃 Century Player** - Play 100+ moves
-- **🎯 Regular Player** - Participate in 10+ games  
-- **👑 Winner** - Achieve 5+ victories
-- **💎 Brilliant Tactician** - Make 5+ brilliant moves
-- **⭐ High Performer** - Maintain 70%+ win rate
-
-## 📚 Chess Resources
-
-- [Chess.com Learn](https://www.chess.com/learn)
-- [Lichess Practice](https://lichess.org/practice)
-- [Chess Rules](https://www.chess.com/learn-how-to-play-chess)
 
 ---
 
-*This chess game is powered by GitHub Actions, python-chess, Stockfish engine, and advanced move analysis.*
+**🎯 Your Move, Challenger. The AI Awaits —** [Open New Issue →](../../issues/new)
 
-**🎯 Challenge the AI and make your move!** [Open New Issue →](../../issues/new)
+---
+
+<p align="center">
+  <img src="./SkatetoCat.png" width="45%" alt="SkatetoCat">
+  <img src="./DinoCat.svg" width="45%" alt="DinoCat">
+</p>
+
+---
+
+[![An image of @vermamk's Holopin badges, which is a link to view their full Holopin profile](https://holopin.me/vermamk)](https://holopin.io/@vermamk)
+
