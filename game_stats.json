@@ -14,7 +14,7 @@
       "total_score": 4
     },
     "AI": {
-      "moves_played": 18,
+      "moves_played": 19,
       "games_participated": 0,
       "wins": 0,
       "losses": 0,
@@ -22,9 +22,9 @@
       "brilliant_moves": 0,
       "blunders": 0,
       "first_game": "2025-06-05T07:48:55.708191",
-      "last_active": "2025-06-09T15:04:24.226815",
+      "last_active": "2025-06-09T15:23:18.663652",
       "favorite_openings": {},
-      "total_score": 18
+      "total_score": 19
     },
     "TestPlayer2": {
       "moves_played": 4,
@@ -53,7 +53,7 @@
       "total_score": 10
     },
     "Verma-MK": {
-      "moves_played": 3,
+      "moves_played": 4,
       "games_participated": 0,
       "wins": 0,
       "losses": 0,
@@ -61,9 +61,9 @@
       "brilliant_moves": 0,
       "blunders": 0,
       "first_game": "2025-06-05T09:08:16.842728",
-      "last_active": "2025-06-09T15:04:24.079988",
+      "last_active": "2025-06-09T15:23:18.516196",
       "favorite_openings": {},
-      "total_score": 3
+      "total_score": 4
     },
     "JaskeeratSingh9": {
       "moves_played": 1,
@@ -99,10 +99,10 @@
       "total_moves": 22
     }
   ],
-  "total_moves": 40,
+  "total_moves": 42,
   "total_games": 2,
   "ai_wins": 2,
   "player_wins": 0,
   "draws": 0,
-  "last_updated": "2025-06-09T15:04:24.226827"
+  "last_updated": "2025-06-09T15:23:18.663664"
 }
