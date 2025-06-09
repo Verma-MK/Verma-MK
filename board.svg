@@ -6,7 +6,6 @@
 <rect x="90" y="450" width="60" height="60" fill="#B58863"/>
 <text x="120" y="488" text-anchor="middle" font-family="serif" font-size="50" fill="#333333">♞</text>
 <rect x="150" y="450" width="60" height="60" fill="#F0D9B5"/>
-<text x="180" y="488" text-anchor="middle" font-family="serif" font-size="50" fill="#333333">♝</text>
 <rect x="210" y="450" width="60" height="60" fill="#B58863"/>
 <text x="240" y="488" text-anchor="middle" font-family="serif" font-size="50" fill="#333333">♛</text>
 <rect x="270" y="450" width="60" height="60" fill="#F0D9B5"/>
@@ -24,6 +23,7 @@
 <rect x="150" y="390" width="60" height="60" fill="#B58863"/>
 <text x="180" y="428" text-anchor="middle" font-family="serif" font-size="50" fill="#333333">♟</text>
 <rect x="210" y="390" width="60" height="60" fill="#F0D9B5"/>
+<text x="240" y="428" text-anchor="middle" font-family="serif" font-size="50" fill="#333333">♝</text>
 <rect x="270" y="390" width="60" height="60" fill="#B58863"/>
 <rect x="330" y="390" width="60" height="60" fill="#F0D9B5"/>
 <text x="360" y="428" text-anchor="middle" font-family="serif" font-size="50" fill="#333333">♟</text>
@@ -45,7 +45,7 @@
 <rect x="150" y="270" width="60" height="60" fill="#B58863"/>
 <rect x="210" y="270" width="60" height="60" fill="#F0D9B5"/>
 <rect x="270" y="270" width="60" height="60" fill="#B58863"/>
-<text x="300" y="308" text-anchor="middle" font-family="serif" font-size="50" fill="#333333">♟</text>
+<text x="300" y="308" text-anchor="middle" font-family="serif" font-size="50" fill="#333333">♙</text>
 <rect x="330" y="270" width="60" height="60" fill="#F0D9B5"/>
 <rect x="390" y="270" width="60" height="60" fill="#B58863"/>
 <rect x="450" y="270" width="60" height="60" fill="#F0D9B5"/>
@@ -53,7 +53,6 @@
 <rect x="90" y="210" width="60" height="60" fill="#B58863"/>
 <rect x="150" y="210" width="60" height="60" fill="#F0D9B5"/>
 <rect x="210" y="210" width="60" height="60" fill="#B58863"/>
-<text x="240" y="248" text-anchor="middle" font-family="serif" font-size="50" fill="#333333">♙</text>
 <rect x="270" y="210" width="60" height="60" fill="#F0D9B5"/>
 <text x="300" y="248" text-anchor="middle" font-family="serif" font-size="50" fill="#333333">♙</text>
 <rect x="330" y="210" width="60" height="60" fill="#B58863"/>
