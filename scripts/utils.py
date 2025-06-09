@@ -54,7 +54,7 @@ def get_readme_template(engine, stats=None):
     if stats:
         try:
             # Get leaderboard
-            leaderboard = stats.get_leaderboard(5)
+            leaderboard = stats.get_leaderboard(10)
             if leaderboard:
                 leaderboard_section = "\n## 🏆 Leaderboard\n\n"
                 leaderboard_section += "| Rank | Player | Score | W/L/D | Win Rate | Moves |\n"
