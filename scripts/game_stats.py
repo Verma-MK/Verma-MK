@@ -135,44 +135,14 @@ class GameStats:
         
         self.save_stats()
     
-    # def get_leaderboard(self, limit=10):
-    #     """Get top players leaderboard"""
-    #     players = []
-    #     for username, stats in self.stats['players'].items():
-    #         win_rate = 0
-    #         if stats['games_participated'] > 0:
-    #             win_rate = (stats['wins'] + 0.5 * stats['draws']) / stats['games_participated']
-            
-    #         player_data = {
-    #             'username': username,
-    #             'score': stats['total_score'],
-    #             'wins': stats['wins'],
-    #             'losses': stats['losses'],
-    #             'draws': stats['draws'],
-    #             'games': stats['games_participated'],
-    #             'moves': stats['moves_played'],
-    #             'win_rate': win_rate,
-    #             'brilliant_moves': stats['brilliant_moves'],
-    #             'blunders': stats['blunders'],
-    #             'last_active': stats['last_active']
-    #         }
-    #         players.append(player_data)
-        
-    #     # Sort by score, then by win rate
-    #     players.sort(key=lambda x: (x['score'], x['win_rate']), reverse=True)
-    #     return players[:limit]
-
-
-
     def get_leaderboard(self, limit=10):
-        """Get top players leaderboard sorted by score and win rate"""
+        """Get top players leaderboard"""
         players = []
-
         for username, stats in self.stats['players'].items():
             win_rate = 0
             if stats['games_participated'] > 0:
                 win_rate = (stats['wins'] + 0.5 * stats['draws']) / stats['games_participated']
-
+            
             player_data = {
                 'username': username,
                 'score': stats['total_score'],
@@ -187,10 +157,40 @@ class GameStats:
                 'last_active': stats['last_active']
             }
             players.append(player_data)
-
-        # ✅ Sort and limit (this was missing!)
+        
+        # Sort by score, then by win rate
         players.sort(key=lambda x: (x['score'], x['win_rate']), reverse=True)
         return players[:limit]
+
+
+
+    # def get_leaderboard(self, limit=10):
+    #     """Get top players leaderboard sorted by score and win rate"""
+    #     players = []
+
+    #     for username, stats in self.stats['players'].items():
+    #         win_rate = 0
+    #         if stats['games_participated'] > 0:
+    #             win_rate = (stats['wins'] + 0.5 * stats['draws']) / stats['games_participated']
+
+    #         player_data = {
+    #             'username': username,
+    #             'score': stats['total_score'],
+    #             'wins': stats['wins'],
+    #             'losses': stats['losses'],
+    #             'draws': stats['draws'],
+    #             'games': stats['games_participated'],
+    #             'moves': stats['moves_played'],
+    #             'win_rate': win_rate,
+    #             'brilliant_moves': stats['brilliant_moves'],
+    #             'blunders': stats['blunders'],
+    #             'last_active': stats['last_active']
+    #         }
+    #         players.append(player_data)
+
+    #     # ✅ Sort and limit (this was missing!)
+    #     players.sort(key=lambda p: (p['score'], p['win_rate']), reverse=True)
+    #     return players[:limit]
 
 
 
