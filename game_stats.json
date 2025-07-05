@@ -14,7 +14,7 @@
       "total_score": 4
     },
     "AI": {
-      "moves_played": 22,
+      "moves_played": 23,
       "games_participated": 0,
       "wins": 0,
       "losses": 0,
@@ -22,9 +22,9 @@
       "brilliant_moves": 0,
       "blunders": 0,
       "first_game": "2025-06-05T07:48:55.708191",
-      "last_active": "2025-06-10T15:48:57.351947",
+      "last_active": "2025-07-05T07:42:23.034262",
       "favorite_openings": {},
-      "total_score": 22
+      "total_score": 23
     },
     "TestPlayer2": {
       "moves_played": 4,
@@ -77,6 +77,19 @@
       "last_active": "2025-06-08T16:29:47.753544",
       "favorite_openings": {},
       "total_score": 1
+    },
+    "ananyaa24913": {
+      "moves_played": 1,
+      "games_participated": 0,
+      "wins": 0,
+      "losses": 0,
+      "draws": 0,
+      "brilliant_moves": 0,
+      "blunders": 0,
+      "first_game": "2025-07-05T07:42:22.889145",
+      "last_active": "2025-07-05T07:42:22.889154",
+      "favorite_openings": {},
+      "total_score": 1
     }
   },
   "games": [
@@ -99,10 +112,10 @@
       "total_moves": 22
     }
   ],
-  "total_moves": 48,
+  "total_moves": 50,
   "total_games": 2,
   "ai_wins": 2,
   "player_wins": 0,
   "draws": 0,
-  "last_updated": "2025-06-10T15:48:57.351958"
+  "last_updated": "2025-07-05T07:42:23.034272"
 }

@@ -11,7 +11,7 @@
 
 **Game Status:** White to move  
 **Total Moves:** 2  
-**Last Moves:** 1. Be2 Qd3
+**Last Moves:** 1. Nf3 hxe5
 
 ## ░ Current Board
 
@@ -51,11 +51,13 @@ Or use UCI notation (from-to squares):
 
 | Rank | Player | Score | W/L/D | Win Rate | Moves |
 |------|--------|-------|-------|----------|-------|
-| 1 | AI | 18 | 0/0/0 | 0% | 18 |
+| 1 | AI | 23 | 0/0/0 | 0% | 23 |
 | 2 | Player1 | 10 | 0/0/0 | 0% | 10 |
-| 3 | TestPlayer1 | 4 | 0/2/0 | 0% | 4 |
-| 4 | TestPlayer2 | 4 | 0/2/0 | 0% | 4 |
-| 5 | Verma-MK | 3 | 0/0/0 | 0% | 3 |
+| 3 | Verma-MK | 7 | 0/0/0 | 0% | 7 |
+| 4 | TestPlayer1 | 4 | 0/2/0 | 0% | 4 |
+| 5 | TestPlayer2 | 4 | 0/2/0 | 0% | 4 |
+| 6 | JaskeeratSingh9 | 1 | 0/0/0 | 0% | 1 |
+| 7 | ananyaa24913 | 1 | 0/0/0 | 0% | 1 |
 
 ## 🎖️ Recent Achievements
 
@@ -66,7 +68,7 @@ Or use UCI notation (from-to squares):
 - **AI Win Rate**: 100.0% (2 wins)
 - **Player Victories**: 0
 - **Draws**: 0
-- **Total Moves**: 40
+- **Total Moves**: 50
 
 
 
